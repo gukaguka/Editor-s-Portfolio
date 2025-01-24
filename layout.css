@@ -52,7 +52,7 @@ body {
 
 /* Specific Images */
 .image-1 {
-  background: url('images/image-1.jpg') no-repeat center center / cover;
+  background: url('image-1.jpg') no-repeat center center / cover;
 }
 
 .image-2 {
@@ -60,7 +60,7 @@ body {
 }
 
 .image-3 {
-  background: url('images/image-3.jpg') no-repeat center center / cover;
+  background: url('image-3.jpg') no-repeat center center / cover;
 }
 
 .image-4 {
@@ -72,17 +72,17 @@ body {
 }
 
 .image-6 {
-  background: url('images/image-6.jpg') no-repeat center center / cover;
+  background: url('image-6.jpg') no-repeat center center / cover;
 }
 
 .parallax {
-  background: url('images/parallax.jpg') no-repeat center center / cover;
+  background: url('parallax.jpg') no-repeat center center / cover;
   height: 400px;
   position: relative;
 }
 
 .background {
-  background: url('images/background.jpg') no-repeat center center / cover;
+  background: url('background.jpg') no-repeat center center / cover;
 }
 
 /* Content Styling */
