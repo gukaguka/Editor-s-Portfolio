@@ -1,283 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
 
 
-body{
-	margin: 0;
-}
-
-@keyframes breath {
- 0%   { background-size: 100% auto; }
-  100% { background-size: 110% auto ; }
-}
-
-.opacity-layer {
-	background-position: center;
-	background-attachment: fixed;
-}
-
+/* General Styles */
 body {
-	overflow-x: hidden;
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-
-.background-image {
-	position: relative;
-	width: 100vw;
-	height: 100vh;
-	animation: breath 5s linear 1 normal forwards;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	background-image: url(hero2.jpg);
-	background-repeat: no-repeat;
-	background-position:;
-	background-size: cover;
-
+h1, h2, h3 {
+    text-align: center;
+    color: #222;
 }
 
-.background-image::before {
-	content: '';
-	position: absolute;
-	top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(0,0,0,0.4);
-	
-
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-
-.headline{
-	position: relative;
-  overflow: hidden;
-  max-height: 500px;
-}
-
-
-.welcome-text{
-	font-family: 'Montserrat Alternates', Monospace;
-	color: white;
-	font-size: 4em;
-	animation: 0.5s headline 0.5s forwards;
-    transform:translateY(-180%);
-    opacity: 8;
-}
-
-@keyframes headline {
-     to {
-    transform:translateY(0);
-  }
-
- }
-
-
- .welcome-text2{
- 	font-family: 'Montserrat Alternates', Monospace;
-	color: white;
-	font-size: 4em;
-	animation: 1s headline2 1s forwards;
-    transform:translateY(+180%);
-    opacity: 8;
-}
-
-@keyframes headline2 {
-     to {
-    transform:translateY(0);
-  }
-}
-
-.about {
-	background-color: white;
-	width: 100vw;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-}
-
-.portfolio {
-width: 90vw;
-}
-
-.header {
-	font-family: 'Montserrat Alternates', Monospace;
-	display: inline-block;
-	padding-bottom: 20px;
-	padding-right: 100px;
-	border-bottom: 3px dotted grey;
-	font-size: 6em;
-}
-
-h2 {
-	font-family: 'Montserrat Alternates', Monospace;
-	padding-top: 50px;
-	padding-bottom: 30px;
-}
-
-p {
-	font-family: 'Montserrat Alternates', Monospace;
-	color: #111111;
-	opacity: 0.8;
-}
-
-.fade-in{
-	opacity: 0;
-	transition: opacity 500ms ease-in;
-}
-
-.fade-in.appear{
-	opacity: 1;
-}
-
+/* Section Styling */
 .section {
-	display: flex;
-	flex-direction: row;
-    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap; /* Ensures flexibility */
+    justify-content: center;
+    gap: 20px; /* Adds spacing between items */
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.projects{
-	padding: 10px;
-	cursor: pointer;
-	border: 1px solid grey;
-	box-shadow: 2px 2px 2px 2px grey;
-	border-radius: 10px;
-	padding-bottom: 120px;
-	width: 465px;
-	margin-bottom: 30px;
-    display:inline-block;
-    height: auto;
+/* Project Card Styling */
+.projects {
+    flex: 1 1 calc(33.333% - 40px); /* Three items per row, responsive */
+    max-width: 400px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
 }
 
-.longer1{
-    padding-bottom: 250px;
+.projects a {
+    text-decoration: none;
+    color: inherit;
 }
 
+.projects h3 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.projects p {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+/* Image Styling */
+.image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover; /* Ensures images fit nicely */
+    border-radius: 10px;
+}
+
+/* Individual Image Backgrounds */
 .image-1 {
-  background-image: url(image-1.jpg);
-  background-repeat: no-repeat;
-	background-position: center ;
-	background-size: cover;
-	width: 100%;
-	height: 60%;
-	border-radius: 20px;
+    background-image: url('image-1.jpg');
+}
+
+.image-6 {
+    background-image: url('image-6.jpg');
 }
 
 .image-3 {
-  background-image: url(image-2.jpg);
-  background-repeat: no-repeat;
-	background-position: center ;
-	background-size: cover;
-	width: 100%;
-	height: 60%;
-	border-radius: 20px;
-}
-.image-4 {
-  background-image: url(bookshop.png);
-  background-repeat: no-repeat;
-	background-position: center ;
-	background-size: cover;
-	width: 100%;
-	height: 80%;
-	border-radius: 20px;
-}
-.image-5 {
-  background-image: url(image-5.png);
-  background-repeat: no-repeat;
-	background-position: center ;
-	background-size: cover;
-	width: 100%;
-	height: 80%;
-	border-radius: 20px;
-}
-.image-6 {
-  background-image: url(image-6.jpg);
-  background-repeat: no-repeat;
-	background-position: center ;
-	background-size: cover;
-	width: 100%;
-	height: 60%;
-	border-radius: 20px;
-}
-a {
-	text-decoration: none;
+    background-image: url('image-2.jpg');
 }
 
-.image-2 {
-  background-image: url(chat-poster.png);
-  background-repeat: no-repeat;
-	background-position: center ;
-	background-size: cover;
-	width: 100%;
-	height: 100%;
-	border-radius: 20px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column; /* Switches to vertical layout */
+        align-items: center;
+    }
 
-.contact-me {
-	margin-top: 100px;
-	padding-top: 50px;
-}
-.default{
-	font-size: 1em; 
-	color: orange;
-	border-radius: 5px; 
-	border: 2px solid;
-	border-color: #2196F3;
-   background: #2196F3;
-  color: white;
-  padding: 5px;
-}
-.default:hover {
-		
-}
-.heading{
-	text-align: center;
-}
+    .projects {
+        flex: 1 1 90%; /* Full width for mobile screens */
+        max-width: 90%;
+    }
 
-.contact-me{
-	text-align: center;
-}
+    .projects h3 {
+        font-size: 1.2em;
+    }
 
-@media only screen and (max-width: 768px) {
-  .section{
-  	display: flex;
-  	flex-direction: column;
-	 width: 80%;
-	  justify-content: center;
-	  align-content: center;
-  }
-	.header{font-size: 3em;}
-	.projects{
-	width: 200px;
-	}
-  .background-image::before{
-  		content: '';
-	position: absolute;
-	top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(0,0,0,0.4);
-	
-  }
-  .background-image {
-	position: relative;
-	width: 100vw;
-	height: auto;
-	animation: breath 5s linear 1 normal forwards;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	background-image: url(hero.jpg);
-	background-repeat: no-repeat;
-	background-size:contain;
-
+    .projects p {
+        font-size: 0.9em;
+    }
 }
-.welcome-text2{
-	font-size: 2em;
-  }
-  .welcome-text{
-	font-size: 2em;
-  }
-  }
