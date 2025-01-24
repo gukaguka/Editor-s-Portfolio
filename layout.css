@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
 
 
-/* General Styles */
-body {
-    font-family: 'Montserrat Alternates', sans-serif;
+/* CSS Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    overflow-x: hidden; /* Fix horizontal scrolling issue */
     background-color: #f4f4f4;
     color: #333;
-    overflow-x: hidden; /* Prevent white space on mobile */
 }
 
 h1, h2, h3 {
@@ -21,81 +25,63 @@ a {
     color: inherit;
 }
 
-/* Section Styling */
+/* Container for Projects Section */
 .section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
     margin: 0 auto;
     padding: 20px;
-    max-width: 100%;
     box-sizing: border-box;
 }
 
-/* Project Card Styling */
+/* Individual Project Card */
 .projects {
-    flex: 1 1 calc(33.333% - 40px); /* Responsive layout: 3 items per row */
-    max-width: 400px;
+    flex: 1 1 calc(33.333% - 40px); /* Responsive grid for 3 items per row */
+    max-width: 400px; /* Constrain the card width */
     border: 1px solid grey;
     border-radius: 10px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-    overflow: hidden; /* Prevent image overflow */
-    padding: 15px;
     background-color: #fff;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Prevent overflow of images */
     text-align: center;
-    box-sizing: border-box;
+    position: relative;
 }
 
-.projects a {
-    text-decoration: none;
-    color: inherit;
+/* Image Styling */
+.projects img {
+    width: 100%; /* Force image to stay within its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
+/* Text Content Inside Project Card */
 .projects h3 {
     font-family: 'Montserrat Alternates', sans-serif;
-    margin-bottom: 10px;
+    margin: 10px 0;
     font-size: 1.5em;
 }
 
 .projects p {
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 1em;
-    margin-bottom: 15px;
+    margin: 10px 15px 15px;
 }
 
-/* Image Styling */
-.image {
-    width: 100%; /* Ensure images fit within their container */
-    height: 200px;
-    object-fit: cover; /* Prevent stretching or overflowing */
-    display: block;
-    border-radius: 10px 10px 0 0; /* Match the card's border radius */
-}
-
-/* Individual Image Backgrounds */
-.image-1 {
-    background-image: url('image-1.jpg');
-}
-
-.image-6 {
-    background-image: url('image-6.jpg');
-}
-
-.image-3 {
-    background-image: url('image-2.jpg');
-}
-
-/* Responsive Design */
+/* Responsive Layout */
 @media (max-width: 768px) {
     .section {
-        flex-direction: column; /* Switch to vertical layout */
+        flex-direction: column; /* Stack items vertically */
         align-items: center;
     }
 
     .projects {
-        flex: 1 1 90%; /* Full width for mobile */
-        max-width: 90%;
+        flex: 1 1 90%; /* Expand cards to full width on mobile */
+        max-width: 90%; /* Prevent overflow */
     }
 
     .projects h3 {
